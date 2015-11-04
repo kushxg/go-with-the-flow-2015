@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.11.2)  3 NOV 2015 11:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.11.2)  3 NOV 2015 20:54
 entering extended mode
 **reference-himcm-paper.tex
 (reference-himcm-paper.tex
@@ -6,8 +6,8 @@ LaTeX2e <2015/01/01> patch level 2
 Babel <3.9m> and hyphenation patterns for 69 languages loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
-File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size11.clo"
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -227,22 +227,22 @@ Package lastpage Info: Please have a look at the pageslts package at
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(90.3375pt, 433.62pt, 90.33751pt)
-* v-part:(T,H,B)=(86.724pt, 578.15999pt, 130.086pt)
+* v-part:(T,H,B)=(57.81598pt, 650.43pt, 86.72401pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
 * \textwidth=433.62pt
-* \textheight=578.15999pt
+* \textheight=650.43pt
 * \oddsidemargin=18.0675pt
 * \evensidemargin=18.0675pt
-* \topmargin=-22.54599pt
+* \topmargin=-51.45401pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=12.0pt
+* \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=44.0pt
+* \marginparwidth=59.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -252,12 +252,12 @@ Package lastpage Info: Please have a look at the pageslts package at
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
+ Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
@@ -270,42 +270,40 @@ File: himcmcover.png Graphic file (type png)
 Package pdftex.def Info: himcmcover.png used on input line 35.
 (pdftex.def)             Requested size: 433.62pt x 613.38094pt.
 
-Overfull \vbox (35.22095pt too high) has occurred while \output is active []
-
-
+(reference-himcm-paper.toc
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
+ Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2 <./himcmcover.png>] (reference-himcm-paper.toc)
+[2 <./himcmcover.png>])
 \tf@toc=\write3
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
+ Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [3]
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
+ Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [4]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
+ Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
@@ -319,12 +317,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--70
 
  []
 
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
 
 Underfull \hbox (badness 10000) in paragraph at lines 71--92
 
@@ -347,14 +345,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--92
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
+ Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [6]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
+ Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
@@ -364,170 +362,170 @@ LaTeX Font Info:    Try loading font information for OMS+cmr on input line 102.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 102.
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no œ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no  in font cmr12!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no œ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no Â in font cmr10!
+Missing character: There is no · in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no   in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no ¡ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no ˆ in font cmr10!
+Missing character: There is no ’ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no › in font cmr10!
+Missing character: There is no ½ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no   in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no – in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no – in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no ¡ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no › in font cmr10!
+Missing character: There is no ½ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no   in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no – in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no ˆ in font cmr10!
+Missing character: There is no ’ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no £ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no – in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no Ÿ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no ¡ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no £ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no – in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no › in font cmr10!
+Missing character: There is no ½ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no   in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no – in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no ˆ in font cmr10!
+Missing character: There is no ’ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no œ in font cmr10!
+Missing character: There is no ˆ in font cmr10!
+Missing character: There is no ğ in font cmr10!
+Missing character: There is no  in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no – in font cmr10!
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
+ Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8]
-Missing character: There is no Â in font cmr12!
-Missing character: There is no · in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no   in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no ¡ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no ˆ in font cmr12!
-Missing character: There is no ’ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no › in font cmr12!
-Missing character: There is no ½ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no   in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no – in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no – in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no ¡ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no › in font cmr12!
-Missing character: There is no ½ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no   in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no – in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no ˆ in font cmr12!
-Missing character: There is no ’ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no £ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no – in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no Ÿ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no ¡ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no £ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no – in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no › in font cmr12!
-Missing character: There is no ½ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no   in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no – in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no ˆ in font cmr12!
-Missing character: There is no ’ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no œ in font cmr12!
-Missing character: There is no ˆ in font cmr12!
-Missing character: There is no ğ in font cmr12!
-Missing character: There is no  in font cmr12!
-Missing character: There is no ‘ in font cmr12!
-Missing character: There is no – in font cmr12!
- 
+[8] 
 AED: lastpage setting LastPage
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
+ Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [9] (reference-himcm-paper.aux) ) 
 Here is how much of TeX's memory you used:
- 2956 strings out of 493673
- 40753 string characters out of 3143963
- 116003 words of memory out of 3000000
+ 2955 strings out of 493673
+ 40760 string characters out of 3143963
+ 115996 words of memory out of 3000000
  6287 multiletter control sequences out of 15000+200000
- 8568 words of font info for 31 fonts, out of 3000000 for 9000
+ 8571 words of font info for 31 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 27i,11n,43p,1536b,270s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,11n,43p,1536b,223s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-mi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb>
-Output written on reference-himcm-paper.pdf (9 pages, 405008 bytes).
+c/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+ex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb>
+Output written on reference-himcm-paper.pdf (9 pages, 421527 bytes).
 PDF statistics:
- 71 PDF objects out of 1000 (max. 8388607)
+ 75 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
