@@ -11,7 +11,6 @@ public class Driver {
 	}
 	
 	private void noor() {
-		
-		System.out.println("im noor");
+		System.out.println("im noor now");
 	}
 }
