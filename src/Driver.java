@@ -8,6 +8,7 @@ public class Driver {
 	
 	private static void printHello() {
 		System.out.println("hello");
+		System.out.println("eyy kush");
 	}
 	
 	private void noor() {
