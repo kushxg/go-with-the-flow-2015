@@ -1,0 +1,14 @@
+
+public class DriverLogic {
+	
+	public int anger;
+	
+	
+	public DriverLogic (){
+		
+	}
+	
+	public drive(Road road) {
+		
+	}
+}
