@@ -1,9 +1,9 @@
 
-public class SlowDriver extends DriverLogic {
-	
-	public SlowDriver(Vehicle v) {
+public class ConservativeDriver extends DriverLogic{
+
+	public ConservativeDriver(Vehicle v) {
 		anger=0;
-		type="slow";
+		type="conservative";
 		v.speed = (int)(Math.random()*65);     //v.max_speed);
 		
 	}

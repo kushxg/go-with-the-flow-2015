@@ -26,79 +26,82 @@ public class Road {
 	// universal time for simulation
 	public int time = 0;
 
-	// arguments - # SEDANS, # VANS, # TRUCKS
-	public Road(int nsedans, int nvans, int ntrucks){
-		
+
+	public Road(int vehicles){		// FIX THIS ######################################################
 		initLanes();
-		// sets num of cars = num sedans
-		num_sedans = nsedans;
-		num_vans = nvans;
-		num_trucks = ntrucks;
-		num_cars = num_sedans + num_vans + num_trucks;
-		
-		// sets position of sedans
-		for(int i=0;i<num_sedans;i++){
-			Vehicle v = new Sedan();
-			v.logic = new RandomDriver(v);
-			vehicles.add(v);
-			
-			randomPlaceVehicle(v);
-			
+		for (int i=0; i<vehicles; i++) {
+			//int vType = (int)Math.random()*3;
+			//int vDriver = 0; //(int)Math.random()*8;
+			int pos = (int)Math.random()*1500+15;
+			int lane = (int)Math.random()*2+1;
+			createVehicle("sedan","random",pos,lane);
 		}
-		
-		// sets position of vans
-		for(int i=0;i<num_vans;i++){
-			Vehicle v = new Van();
-			vehicles.add(v);
-			
-			randomPlaceVehicle(v);
-		}
-		
-		// sets position of trucks
-		for(int i=0;i<num_trucks;i++){
-			Vehicle v = new Truck();
-			vehicles.add(v);
-			
-			randomPlaceVehicle(v);
-		}
+		System.out.println(this.vehicles.size());
 	}
 	
 	// road constructor for given vehicle arraylist
-	public Road(ArrayList<Vehicle> vehicle_list){
+	public Road(){
 		initLanes();
-		for(Vehicle v: vehicle_list){
-			vehicles.add(v);
-			
-			randomPlaceVehicle(v);
-		}
-	}
-	
-	public Road() {
-		initLanes();
-		Vehicle car = new Sedan();
-		placeVehicle(car, 3, 1);
-		vehicles.add(car);
-		car.logic = new RandomDriver(car);
+		createVehicle("sedan","random",35,1);
+		createVehicle("sedan","random",16,1);
+		createVehicle("sedan","random",8,1);
+		createVehicle("sedan","random",3,1);
 		
-		Vehicle car2 = new Sedan();
-		placeVehicle(car2, 3, 2);
-		vehicles.add(car2);
-		car2.logic = new RandomDriver(car2);
+		
+		
+		//createVehicle("sedan","random",344,1);
+		//createVehicle("sedan","random",356,1);
+		//createVehicle("sedan","random",123,1);
+		//createVehicle("sedan","random",989,1);
+		
 	}
 	
-	public void randomPlaceVehicle(Vehicle v) {
-		int pos = (int) Math.random()*roadblock_position;
-		int lane = (int) Math.random()*2+1;
-		boolean works = false;
-		while(!works){
-			works=placeVehicle(v, pos, lane);
-			
-			// if don't work
-			pos = (int) Math.random()*roadblock_position;
-			lane = (int) Math.random()*2+1;
+	public void createVehicle(String type, String driver, int pos, int lane) {
+		Vehicle newV = null;
+		if (type.equals("sedan")) {
+			newV = new Sedan();
 		}
+		else if (type.equals("van")) {
+			newV = new Van();
+		}
+		else if (type.equals("truck")) {
+			newV = new Truck();
+		}
+		if (!placeVehicle(newV, pos, lane)) {
+			return;
+		}
+		vehicles.add(newV);
+		if (driver.equals("random")) {
+			newV.logic = new RandomDriver(newV);
+		}
+		else if (driver.equals("aggressive")) {
+			newV.logic = new AggressiveDriver(newV);
+		}
+		else if (driver.equals("conservative")) {
+			newV.logic = new ConservativeDriver(newV);
+		}
+		else if (driver.equals("slow")) {
+			newV.logic = new SlowDriver(newV);
+		}
+		else if (driver.equals("fast")) {
+			newV.logic = new FastDriver(newV);
+		}
+		else if (driver.equals("safe")) {
+			newV.logic = new SafeDriver(newV);
+		}
+		else if (driver.equals("selfish")) {
+			newV.logic = new SelfishDriver(newV);
+		}
+		else if (driver.equals("fair")) {
+			newV.logic = new FairDriver(newV);
+		}
+		else if (driver.equals("test")) {
+			newV.logic = new TestDriver(newV);
+		}
+		
+		
 	}
-	
+
 	public boolean placeVehicle(Vehicle v, int pos, int lane) {		// places a vehicle at a specific position (based off of front index) if the vehicle goes off the array, those elements are left out
 		
 		if (lane==1 && lane1.get(pos) == null) {
@@ -157,6 +160,7 @@ public class Road {
 		
 		while (nextSecond().equals("running")) {
 			time++;
+			System.out.println(time);
 		}
 		
 		System.out.println("Total Runtime: "+time);

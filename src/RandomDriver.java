@@ -4,13 +4,13 @@ public class RandomDriver extends DriverLogic {
 	public RandomDriver(Vehicle v) {
 		anger=0;
 		type="random";
-		v.speed = (int)(Math.random()*65);     //v.max_speed);
+		v.speed = (int)(v.max_speed*.6);
 		
 	}
 	
 	public boolean drive(Road road, Vehicle v) {
 		
-		int delta = (int)mps(v.speed);
+		int delta = (int)Math.ceil(mps(v.speed))+1;
 		move(delta, road, v);
 		
 		return false;	// false implies that a crash did not take place

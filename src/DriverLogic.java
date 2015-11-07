@@ -43,7 +43,8 @@ public class DriverLogic {
 	}
 	
 	public void move(int delta, Road road, Vehicle v) {
-		int newPos = findIndex(road, v)+delta;
+		int newPos = v.findIndex(road)+delta;
+		System.out.println(v.findIndex(road));
 		if (newPos < 3000) {
 			road.moveVehicle(v, findIndex(road, v)+delta, findLane(road, v));
 		}

@@ -18,18 +18,20 @@ public class Vehicle {
 	
 	public boolean drive(Road road) {	// returns whether or not a crash took place
 		if (exited) {
+			System.out.println("exited");
 			return false;
 		}
 		return logic.drive(road, this);
 	}
+
 	
 	public int findIndex(Road road) {
 		
 		if (road.lane1.indexOf(this) != -1) {
-			return road.lane1.indexOf(this)+length-1;
+			return road.lane1.lastIndexOf(this);
 		}
 		else {
-			return road.lane2.indexOf(this)+length-1;
+			return road.lane2.lastIndexOf(this);
 		}
 		
 	}
