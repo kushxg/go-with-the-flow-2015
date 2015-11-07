@@ -1,10 +1,16 @@
+import java.util.List;
+
 
 public class DriverLogic {
 	
 	public int anger;
 	public String type;
 	
-	public DriverLogic (){
+	public boolean isAccel = false;
+	public boolean isBraking = false;
+	public int mergeStatus = 0;
+	
+	public DriverLogic() {
 		
 	}
 	
@@ -24,11 +30,13 @@ public class DriverLogic {
 		
 	}
 	
-	public List<Vehicle> findLane(Road r, Vehicle v) {
-		
+	public int findLane(Road road, Vehicle v) {
+		int lane = 0;
 		if (road.lane1.indexOf(v) != -1) {
-			return road.lane1;
+			lane+=1;
+		} if (road.lane2.indexOf(v) != -1) {
+			lane+=2;
 		}
-		return road.lane2;
+		return lane;	// returns 1 if car is in lane 1, 2 if lane 2, or 3 if in both lanes   (0 if vehicle doesn't exist)
 	}
 }
