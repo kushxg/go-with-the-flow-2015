@@ -10,3 +10,8 @@
 /AggressiveDrive.class
 /SafeDriver.class
 /TestDriver.class
+/FairDriver.class
+/FastDriver.class
+/RandomDriver.class
+/SelfishDriver.class
+/SlowDriver.class
