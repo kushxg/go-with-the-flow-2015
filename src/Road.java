@@ -26,7 +26,9 @@ public class Road {
 		}
 	}
 	
-	public void setRoadLength(int n)
+	public void setRoadLength(int n){
+		this.road_length = n;
+	}
 	
 	public void setRoadBlock(int n){
 		this.roadblock_position = n;
