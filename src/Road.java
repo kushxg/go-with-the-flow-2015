@@ -19,15 +19,17 @@ public class Road {
 		// 1 | | |
 		// 0 |X| |
 		
-		for(int i=0;i<road_length;i++){ // 3000 is length of road (could be variable?)
+		for(int i=0;i<road_length;i++){ 
 			for(int j=0;j<num_lanes;j++){
 				
 			}
 		}
 	}
 	
-	public void setRoadBlock(int roadblock_position){
-		this.roadblock_position = roadblock_position;
+	public void setRoadLength(int n)
+	
+	public void setRoadBlock(int n){
+		this.roadblock_position = n;
 	}
 	
 	public void nextSecond(){
