@@ -13,9 +13,22 @@ public class DriverLogic {
 		return false;	// false implies that a crash did not take place
 	}
 	
-	public int findThisVehicle(Road road, Vehicle v) {
+	public int findIndex(Road road, Vehicle v) {
 		
-		return road.lane1.indexOf(this)+v.length-1;
+		if (road.lane1.indexOf(v) != -1) {
+			return road.lane1.indexOf(v)+v.length-1;
+		}
+		else {
+			return road.lane2.indexOf(v)+v.length-1;
+		}
 		
+	}
+	
+	public List<Vehicle> findLane(Road r, Vehicle v) {
+		
+		if (road.lane1.indexOf(v) != -1) {
+			return road.lane1;
+		}
+		return road.lane2;
 	}
 }
