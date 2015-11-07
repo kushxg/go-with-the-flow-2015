@@ -4,8 +4,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class Driver {
-	private static PrintWriter file;
-	private static PrintWriter masterFile;
+	private static PrintWriter file; // for sets of tests
+	private static PrintWriter masterFile; // for overall analysis of data
 	private static BufferedReader reader;
 	
 	public static void main(String[] args) {
@@ -77,7 +77,7 @@ public class Driver {
 		total_runtime = r.total_runtime;
 		avg_time_per_car = r.avg_time_per_car;
 		
-		String crash_result = (r.crashed) ? "X" : "";
+		String crash_result = (r.crashed) ? "X" : ""; // TYPE OF DRIVER THAT CRASHES
 		
 		file.println(num_cars + "," + num_sedans + "," + num_vans + "," + num_trucks + "," + num_random_drivers + "," + num_aggressive_drivers + "," + num_conservative_drivers + "," + num_slow_drivers + "," + num_fast_drivers + "," + num_safe_drivers + "," + num_selfish_drivers + "," + num_fair_drivers + "," + num_test_drivers + "," + total_runtime + "," + avg_time_per_car + "," + crash_result);
 		
