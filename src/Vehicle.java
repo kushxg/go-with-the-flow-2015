@@ -2,16 +2,16 @@ import java.util.List;
 
 
 public class Vehicle {
-	public int max_speed;
+	private int max_speed;			// the maximum speed attainable by this kind of car
+	private int speed;				// the current speed of this car
+	private int length;				// the length of a car
+	private DriverLogic logic;
 	
-	public int speed; 
-	
-	
-	public Vehicle(){
+	public Vehicle() {
 		
 	}
 	
-	public void drive(Road road) {
-		
+	public boolean drive(Road road, Vehicle this) {
+		return logic.drive(road); 
 	}
 }
