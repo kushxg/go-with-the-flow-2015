@@ -19,6 +19,8 @@ public class DriverLogic {
 		return false;	// false implies that a crash did not take place
 	}
 	
+	
+	
 	public int findIndex(Road road, Vehicle v) {
 		
 		if (road.lane1.indexOf(v) != -1) {
@@ -38,5 +40,17 @@ public class DriverLogic {
 			lane+=2;
 		}
 		return lane;	// returns 1 if car is in lane 1, 2 if lane 2, or 3 if in both lanes   (0 if vehicle doesn't exist)
+	}
+	
+	public void move(int delta, Road road, Vehicle v) {
+		int newPos = findIndex(road, v)+delta;
+		if (newPos < 3000) {
+			road.moveVehicle(v, findIndex(road, v)+delta, findLane(road, v));
+		}
+		else {
+			v.exited=true;
+			road.removeVehicle(v);
+		}
+		
 	}
 }
