@@ -5,6 +5,7 @@ public class Vehicle {
 	public int max_speed;			// the maximum speed attainable by this kind of car (kph)
 	public int speed;				// the current speed of this car (kph)
 	public int length;				// the length of this car
+	public boolean crashed = false;
 	public double brakeAccel;		// the braking acceleration of this car
 	public double accel;			// the acceleration of this car
 	public int mergeTime;			// the time (in seconds) in which this vehicle can merge
@@ -20,6 +21,11 @@ public class Vehicle {
 		if (exited) {
 			System.out.println("exited");
 			return false;
+		}
+		
+		if(crashed){
+			System.out.println("crashed");
+			return true;
 		}
 		return logic.drive(road, this);
 	}

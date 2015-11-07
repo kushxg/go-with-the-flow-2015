@@ -19,8 +19,6 @@ public class DriverLogic {
 		return false;	// false implies that a crash did not take place
 	}
 	
-	
-	
 	public int findIndex(Road road, Vehicle v) {
 		
 		if (road.lane1.indexOf(v) != -1) {

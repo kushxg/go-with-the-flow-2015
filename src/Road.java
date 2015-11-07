@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 // 2 constructors
@@ -25,35 +27,69 @@ public class Road {
 	
 	// universal time for simulation
 	public int time = 0;
+	
+	// return information
+	public int total_runtime; 
+	public double avg_time_per_car;
+	
+	public boolean crashed = false;
 
-
-	public Road(int vehicles){		// FIX THIS ######################################################
+	public Road(int vehicles){
 		initLanes();
 		for (int i=0; i<vehicles; i++) {
-			//int vType = (int)Math.random()*3;
-			//int vDriver = 0; //(int)Math.random()*8;
+			int vType = (int)Math.random()*3+1;
+			String type = "";
+			switch(vType){
+			case 1:
+				type = "sedan";
+				break;
+			case 2:
+				type = "van";
+				break;
+			case 3:
+				type = "truck";
+				break;
+			}
+			int vDriver = (int)Math.random()*9+1;
+			String driverType = "";
+			switch(vDriver){
+			case 1:
+				driverType = "random";
+				break;
+			case 2:
+				driverType = "aggressive";
+				break;
+			case 3:
+				driverType = "conservative";
+				break;
+			case 4:
+				driverType = "slow";
+				break;
+			case 5:
+				driverType = "fast";
+				break;
+			case 6:
+				driverType = "safe";
+				break;
+			case 7:
+				driverType = "selfish";
+				break;
+			case 8:
+				driverType = "fair";
+				break;
+			case 9:
+				driverType = "test";
+				break;
+			}
 			int pos = (int)Math.random()*1500+15;
 			int lane = (int)Math.random()*2+1;
-			createVehicle("sedan","random",pos,lane);
+			createVehicle(type,driverType,pos,lane);
 		}
-		System.out.println(this.vehicles.size());
 	}
 	
 	// road constructor for given vehicle arraylist
 	public Road(){
 		initLanes();
-		createVehicle("sedan","random",35,1);
-		createVehicle("sedan","random",16,1);
-		createVehicle("sedan","random",8,1);
-		createVehicle("sedan","random",3,1);
-		
-		
-		
-		//createVehicle("sedan","random",344,1);
-		//createVehicle("sedan","random",356,1);
-		//createVehicle("sedan","random",123,1);
-		//createVehicle("sedan","random",989,1);
-		
 	}
 	
 	public void createVehicle(String type, String driver, int pos, int lane) {
@@ -146,13 +182,15 @@ public class Road {
 	public boolean moveVehicle(Vehicle v, int pos, int lane) {
 		removeVehicle(v);
 		if (!placeVehicle(v,pos,lane)) {
+			v.crashed = true;
 			return false;	// crash occurred
 		}
 		return true;
 	}
 	
 	public boolean orderVehicles() {
-		// orders vehicles array based on index of each vehicle
+		// sorts vehicles in descending order
+		Collections.sort(vehicles, new CustomComparator());
 		return true;
 	}
 	
@@ -160,17 +198,22 @@ public class Road {
 		
 		while (nextSecond().equals("running")) {
 			time++;
-			System.out.println(time);
 		}
 		
+		total_runtime = time;
 		System.out.println("Total Runtime: "+time);
-		System.out.println("Avg. Time/Car: "+(((double)time)/vehicles.size()));
+		
+		avg_time_per_car = (((double)time)/vehicles.size());
+		System.out.println("Avg. Time/Car: "+ avg_time_per_car);
 	}
 	
 	// increments through each second
 	public String nextSecond(){
+		orderVehicles(); // sorts vehicles in descending order
 		for (Vehicle v: vehicles) {
+			System.out.println(v.findIndex(this));
 			if (v.drive(this)) {	// if a crash took place, then break out of the simulation
+				crashed = true;
 				return "crash";
 			}
 		}
@@ -195,4 +238,13 @@ public class Road {
 		}
 		
 	}
+
+	private class CustomComparator implements Comparator<Vehicle> {
+	    @Override
+	    public int compare(Vehicle v1, Vehicle v2) {
+	        return Integer.valueOf(v2.findIndex(Road.this)).compareTo(Integer.valueOf(v1.findIndex(Road.this))); // descending order
+	    }
+	}
 }
+
+
