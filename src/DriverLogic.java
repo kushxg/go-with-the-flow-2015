@@ -13,4 +13,9 @@ public class DriverLogic {
 		return false;	// false implies that a crash did not take place
 	}
 	
+	public int findThisVehicle(Road road, Vehicle v) {
+		
+		return road.lane1.indexOf(this)+v.length-1;
+		
+	}
 }
