@@ -97,6 +97,8 @@ public class DriverLogic {
 		}
 	}
 	
+	// default merge-left
+	// no merge buffer
 	public void mergeLeft(Road road, Vehicle v){
 		if(v.findLane(road) == 1){
 			return;

@@ -79,8 +79,8 @@ public class Driver {
 		
 		num_cars = num_sedans + num_vans + num_trucks;
 		
-		double avg_runtime = 0;
-		double avg_avg_time_per_car = 0;
+		double avg_runtime = 0.0;
+		double avg_avg_time_per_car = 0.0;
 		int num_crashes = 0;
 		
 		for (int i=0; i<num_tests; i++) {
@@ -285,18 +285,20 @@ public class Driver {
 			
 			total_runtime = r.total_runtime;
 			avg_runtime += total_runtime;
-			avg_time_per_car = r.avg_time_per_car;
-			avg_avg_time_per_car += avg_time_per_car;
 			
 			String crash_result = (r.crashed) ? "X" : ""; // TYPE OF DRIVER THAT CRASHES
-			if(r.crashed) num_crashes++;
+			if(!r.crashed){
+				avg_time_per_car = r.avg_time_per_car;
+				avg_avg_time_per_car += avg_time_per_car;
+				num_crashes++;
+			} 
 			
 			file.println(total_runtime + "," + avg_time_per_car + "," + crash_result);
 
 		}
 		
 		avg_runtime = ((double) avg_runtime)/num_tests;
-		avg_avg_time_per_car /= num_tests;
+		avg_avg_time_per_car = ((double) avg_avg_time_per_car)/num_tests;
 		System.out.println("--Overall Statistics--");
 		System.out.println("Average Runtime:" + avg_runtime);
 		System.out.println("Average Average Time/Car: " + avg_avg_time_per_car);

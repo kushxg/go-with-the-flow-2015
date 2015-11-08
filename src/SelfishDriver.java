@@ -19,4 +19,30 @@ public class SelfishDriver extends DriverLogic{
 		
 		mergeLeft(road, v);
 	}
+	
+	// custom merge-left
+	// merge buffer of 3 (only cares about himself)
+	public void mergeLeft(Road road, Vehicle v){
+		if(v.findLane(road) == 1){
+			return;
+		}
+		
+		int pos = v.findIndex(road);
+		
+		if(mergeStatus == 0){
+			for(int i=pos+3;i>pos-v.length-3;i--){
+				if(i >= 0 && i < road.roadblock_position && road.lane1.get(i) == null){
+					return;
+				}
+			}
+			
+			mergeStatus++;
+		}else{
+			System.out.println(mergeStatus);
+			mergeStatus++;
+			if(mergeStatus == 4){
+				road.moveVehicle(v, pos, 1);
+			}
+		}
+	}
 }
