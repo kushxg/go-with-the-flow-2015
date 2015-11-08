@@ -4,7 +4,6 @@ import java.util.List;
 
 public class DriverLogic {
 	
-	
 	public String type;
 
 	public int mergeStatus = 0;
@@ -94,6 +93,10 @@ public class DriverLogic {
 			actions.add("accel");
 			if (v.speed>v.max_speed) {
 				v.speed = v.max_speed;
+			}
+			
+			if(v.speed>road.speed_limit){
+				v.speed = road.speed_limit;
 			}
 			// System.out.println("accel");
 		}

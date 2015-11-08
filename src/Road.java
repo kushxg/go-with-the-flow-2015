@@ -103,6 +103,8 @@ public class Road {
 		}
 		else if (type.equals("truck")) {
 			newV = new Truck();
+		}else if(type.equals("roadblock")){
+			newV = new RoadBlock();
 		}
 		if (!placeVehicle(newV, pos, lane)) {
 			return false;

@@ -76,7 +76,7 @@ public class Driver {
 		double avg_time_per_car = 0;
 		
 		// beginning of test
-		file.println("TOTAL RUNTIME,AVG TIME PER CAR,CRASHED");
+		file.println("TOTAL RUNTIME,AVG TIME PER CAR,CRASHED,AVG ANGER");
 		
 		num_cars = num_sedans + num_vans + num_trucks;
 		
@@ -280,9 +280,17 @@ public class Driver {
 				}
 			}
 			
+			r.createVehicle("roadblock", "", r.roadblock_position, 2);
+			
 			r.orderVehicles();
 			
 			r.run();
+			
+			double avg_anger = 0;
+			for(Vehicle v: r.vehicles){
+				avg_anger += v.anger;
+			}
+			avg_anger = avg_anger/r.vehicles.size();
 			
 			total_runtime = r.total_runtime;
 			avg_runtime += total_runtime;
@@ -294,7 +302,7 @@ public class Driver {
 				num_crashes++;
 			} 
 			
-			file.println(total_runtime + "," + avg_time_per_car + "," + crash_result);
+			file.println(total_runtime + "," + avg_time_per_car + "," + crash_result + "," + avg_anger);
 
 		}
 		
