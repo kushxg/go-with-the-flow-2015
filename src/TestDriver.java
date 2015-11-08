@@ -54,23 +54,52 @@ public class TestDriver extends DriverLogic {
 		// all congestion values have been computed and stored at this point
 		
 		double currCongDiff = congDiff(congT, cong1, cong2, cong3, cong4);
+		double congDiff1 = congDiff(congT, congestion((vel1*cars+v.speed)/cars,cars,frontLen-v.speed,1), cong2, cong3, cong4);
+		double congDiff2 = congDiff(congT, cong1, congestion((vel2*cars+v.speed)/cars,cars,frontLen-v.speed,1), cong3, cong4);
+		double congDiff3 = congDiff(congT, cong1, cong2, congestion((vel3*cars+v.speed)/cars,cars,backLen+v.speed,1), cong4);
+		double congDiff4 = congDiff(congT, cong1, cong2, cong3, congestion((vel4*cars+v.speed)/cars,cars,backLen+v.speed, 1));
 		
+		double minValue = Math.min(Math.min(congDiff1,congDiff2),Math.min(Math.min(congDiff3,congDiff4),currCongDiff));
 		
-		
-		
-		
-		
-		
-		
-		
-		// old stuff
-		accel(road,v);
+		if (minValue == currCongDiff) {
+			actions.add("stay");
+		} else if (minValue == congDiff1) {
+			actions.add("accel");
+			v.speed+=v.accel;
+		} else if (minValue == congDiff2) {
+			if (v.findLane(road) == 1) {
+				actions.add("attempt move right");
+				attemptMergeRight();
+			} else {
+				attemptMergeLeft();
+			}
+		} else if (minValue == congDiff3) {
+			actions.add("move back and merge");
+			v.speed+=v.brakeAccel;
+			if (v.findLane(road) == 1) {
+				attemptMergeRight();
+			} else {
+				attemptMergeLeft();
+			}
+		} else if (minValue == congDiff4) {
+			actions.add("brake");
+			v.speed+=v.brakeAccel;
+		}
 		
 		int delta = (int)Math.ceil(mps(v.speed))+1;
 		move(delta, road, v);
-			
-		mergeLeft(road, v);
-		mergeRight(road, v);
+	}
+	
+	public void attemptMergeRight() {
+		
+	}
+	
+	public void attemptMergeLeft() {
+		
+	}
+	
+	public double congestion(double vel, int cars, int len, int lanes) {
+		return vel*vel*cars/len/lanes/2;
 	}
 	
 	public double congDiff(double ct, double c1, double c2, double c3, double c4) {
