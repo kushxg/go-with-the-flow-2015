@@ -11,6 +11,8 @@ public class Vehicle {
 	public int mergeTime;			// the time (in seconds) in which this vehicle can merge
 	public boolean exited = false;	// whether or not the vehicle is still in the 3km stretch of road
 	public DriverLogic logic;
+	public int timeOnRoad = 0;
+	
 	
 	public Vehicle() {
 		
@@ -19,15 +21,14 @@ public class Vehicle {
 	
 	public boolean drive(Road road) {	// returns whether or not a crash took place
 		if (exited) {
-			System.out.println("exited");
 			return false;
 		}
 		
 		if(crashed){
-			System.out.println("crashed");
 			return true;
 		}
-		return logic.drive(road, this);
+		logic.drive(road, this);
+		return false;
 	}
 
 	

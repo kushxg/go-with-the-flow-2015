@@ -8,15 +8,11 @@ public class RandomDriver extends DriverLogic {
 		
 	}
 	
-	public boolean drive(Road road, Vehicle v) {
+	public void drive(Road road, Vehicle v) {
 		
 		int delta = (int)Math.ceil(mps(v.speed))+1;
 		move(delta, road, v);
-		
-		return false;	// false implies that a crash did not take place
 	}
 	
-	public double mps(int speed) {	// converts speed (kph) to m/s
-		return speed*0.277778;
-	}
+	
 }

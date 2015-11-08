@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -9,14 +10,18 @@ public class DriverLogic {
 	public boolean isAccel = false;
 	public boolean isBraking = false;
 	public int mergeStatus = 0;
+	int maxTimeToImpact;
+	int slowTime;
+	int speedTime;
+	
+	public List<String> actions = new ArrayList<String>();
 	
 	public DriverLogic() {
 		
 	}
 	
-	public boolean drive(Road road, Vehicle v) {
-		
-		return false;	// false implies that a crash did not take place
+	public void drive(Road road, Vehicle v) {
+
 	}
 	
 	public int findIndex(Road road, Vehicle v) {
@@ -40,16 +45,57 @@ public class DriverLogic {
 		return lane;	// returns 1 if car is in lane 1, 2 if lane 2, or 3 if in both lanes   (0 if vehicle doesn't exist)
 	}
 	
-	public void move(int delta, Road road, Vehicle v) {
+	public boolean move(int delta, Road road, Vehicle v) {
 		int newPos = v.findIndex(road)+delta;
-		System.out.println(v.findIndex(road));
 		if (newPos < 3000) {
-			road.moveVehicle(v, findIndex(road, v)+delta, findLane(road, v));
+			return road.moveVehicle(v, findIndex(road, v)+delta, findLane(road, v));
 		}
 		else {
 			v.exited=true;
+			v.timeOnRoad = road.time;
 			road.removeVehicle(v);
 		}
+		return false;
+	}
+	
+	public double mps(int speed) {	// converts speed (kph) to m/s
+		return speed*0.277778;
+	}
+	
+	public void accel(Road road, Vehicle v) {
+		int spacesInFront = 0;
+		for (int i=findIndex(road, v)+1; i<3000; i++) {
+			if (findLane(road, v) == 1) {
+				if (road.lane1.get(i) == null) {
+					spacesInFront++;
+				} else {
+					break;
+				}
+			}
+			else if (findLane(road, v) == 2) {
+				if (road.lane2.get(i) == null) {
+					spacesInFront++;
+				} else {
+					break;
+				}
+			}
+		}
 		
+		int timeToImpact = (int)(spacesInFront/(v.speed+.01));
+		if (maxTimeToImpact - timeToImpact < slowTime) {	
+			v.speed = v.speed+(int)v.brakeAccel;
+			if (v.speed<1) {
+				v.speed = 0;
+			}
+			actions.add("brake");
+			System.out.println("brake");
+		} else if (maxTimeToImpact - timeToImpact > speedTime) {
+			v.speed = v.speed+(int)v.accel;
+			actions.add("accel");
+			if (v.speed>v.max_speed) {
+				v.speed = v.max_speed;
+			}
+			System.out.println("accel");
+		}
 	}
 }

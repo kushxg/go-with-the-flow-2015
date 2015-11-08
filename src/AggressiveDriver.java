@@ -1,16 +1,24 @@
 
 public class AggressiveDriver extends DriverLogic{
 
+	
+	
 	public AggressiveDriver(Vehicle v) {
 		anger=0;
 		type="aggressive";
-		v.speed = (int)(Math.random()*65);     //v.max_speed);
-		
+		v.speed = (int)(.6*v.max_speed);
+		maxTimeToImpact = (int)Math.ceil(v.max_speed/v.accel)+1;
+		slowTime = 1;
+		speedTime = 8;
 	}
 	
 	
-	public boolean drive(Road road, Vehicle v) {
+	public void drive(Road road, Vehicle v) {
 		
-		return false;	// false implies that a crash did not take place
+		accel(road,v);
+		
+		int delta = (int)Math.ceil(mps(v.speed))+1;
+		move(delta, road, v);
+
 	}
 }

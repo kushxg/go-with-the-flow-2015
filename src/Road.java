@@ -92,7 +92,7 @@ public class Road {
 		initLanes();
 	}
 	
-	public void createVehicle(String type, String driver, int pos, int lane) {
+	public boolean createVehicle(String type, String driver, int pos, int lane) {
 		Vehicle newV = null;
 		if (type.equals("sedan")) {
 			newV = new Sedan();
@@ -104,7 +104,7 @@ public class Road {
 			newV = new Truck();
 		}
 		if (!placeVehicle(newV, pos, lane)) {
-			return;
+			return false;
 		}
 		vehicles.add(newV);
 		if (driver.equals("random")) {
@@ -134,7 +134,7 @@ public class Road {
 		else if (driver.equals("test")) {
 			newV.logic = new TestDriver(newV);
 		}
-		
+		return true;
 		
 	}
 
@@ -203,7 +203,11 @@ public class Road {
 		total_runtime = time;
 		System.out.println("Total Runtime: "+time);
 		
-		avg_time_per_car = (((double)time)/vehicles.size());
+		avg_time_per_car = 0;
+		for (Vehicle v: vehicles) {
+			avg_time_per_car += v.timeOnRoad;
+		}
+		avg_time_per_car = avg_time_per_car/vehicles.size();
 		System.out.println("Avg. Time/Car: "+ avg_time_per_car);
 	}
 	
@@ -211,7 +215,6 @@ public class Road {
 	public String nextSecond(){
 		orderVehicles(); // sorts vehicles in descending order
 		for (Vehicle v: vehicles) {
-			System.out.println(v.findIndex(this));
 			if (v.drive(this)) {	// if a crash took place, then break out of the simulation
 				crashed = true;
 				return "crash";
@@ -225,7 +228,7 @@ public class Road {
 	
 	public boolean allCarsExited() {
 		for (Vehicle v: vehicles) {
-			if (!v.exited)
+			if (!v.exited && !v.crashed)
 				return false;
 		}
 		return true;
