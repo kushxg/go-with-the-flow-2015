@@ -14,9 +14,9 @@ public class Driver {
 	
 	private static int num_tests = 2;
 	
-	private static int num_sedans = 10;
-	private static int num_vans = 0;
-	private static int num_trucks = 0;
+	private static int num_sedans = 2;
+	private static int num_vans = 2;
+	private static int num_trucks = 4;
 	
 	// dont change these values
 	private static int num_random_drivers = 0;
@@ -93,7 +93,7 @@ public class Driver {
 				pos = (int)(Math.random()*1500)+15;
 				lane = (int)(Math.random()*2)+1;
 				System.out.println(pos + " " + lane);
-				int driverType = 3;//(int)Math.random()*2;
+				int driverType = (int)(Math.random()*7)+1;
 				switch(driverType) {
 				case 1:
 					if (!r.createVehicle("sedan", "aggressive", pos, lane)) {
@@ -157,10 +157,10 @@ public class Driver {
 				pos = (int)(Math.random()*1500)+15;
 				lane = (int)(Math.random()*2)+1;
 				System.out.println(pos + " " + lane);
-				int driverType = (int)Math.random()*2;
+				int driverType = (int)(Math.random()*7)+1;
 				switch(driverType) {
 				case 1:
-					if (!r.createVehicle("vans", "aggressive", pos, lane)) {
+					if (!r.createVehicle("van", "aggressive", pos, lane)) {
 						j--;
 					}
 					num_aggressive_drivers++;
@@ -220,10 +220,10 @@ public class Driver {
 				pos = (int)(Math.random()*1500)+15;
 				lane = (int)(Math.random()*2)+1;
 				System.out.println(pos + " " + lane);
-				int driverType = (int)Math.random()*2;
+				int driverType = (int)(Math.random()*7)+1;
 				switch(driverType) {
 				case 1:
-					if (!r.createVehicle("trucks", "aggressive", pos, lane)) {
+					if (!r.createVehicle("truck", "aggressive", pos, lane)) {
 						j--;
 					}
 					num_aggressive_drivers++;
@@ -295,8 +295,13 @@ public class Driver {
 
 		}
 		
-		avg_runtime = ((double) avg_runtime);
+		avg_runtime = ((double) avg_runtime)/num_tests;
 		avg_avg_time_per_car /= num_tests;
+		System.out.println("--Overall Statistics--");
+		System.out.println("Average Runtime:" + avg_runtime);
+		System.out.println("Average Average Time/Car: " + avg_avg_time_per_car);
+		
+		
 		System.out.println("Total Crashes: " + num_crashes);
 		masterFile.append(temp + "," + num_cars + "," + num_sedans + "," + num_vans + "," + num_trucks + "," + num_random_drivers + "," + num_aggressive_drivers + "," + num_conservative_drivers + "," + num_slow_drivers + "," + num_fast_drivers + "," + num_safe_drivers + "," + num_selfish_drivers + "," + num_fair_drivers + "," + num_test_drivers + "," + avg_runtime + "," + avg_avg_time_per_car + "," + num_crashes + "\n");
 		
