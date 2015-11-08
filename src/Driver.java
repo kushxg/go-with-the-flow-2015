@@ -14,8 +14,12 @@ public class Driver {
 	
 	private static int num_tests = 2;
 	
+<<<<<<< HEAD
+	private static int num_sedans = 9;
+=======
 	public static int num_cars = 0;
 	private static int num_sedans = 2;
+>>>>>>> origin/master
 	private static int num_vans = 2;
 	private static int num_trucks = 4;
 	
@@ -87,6 +91,8 @@ public class Driver {
 		for (int i=0; i<num_tests; i++) {
 			
 			Road r = new Road();
+			
+			//r.createVehicle("sedan", "test", 5, 2);
 			
 			int pos;
 			int lane;
