@@ -2,7 +2,6 @@
 public class ConservativeDriver extends DriverLogic{
 
 	public ConservativeDriver(Vehicle v) {
-		anger=0;
 		type="conservative";
 		v.speed = (int)(.4*v.max_speed);     //v.max_speed);
 		maxTimeToImpact = (int)Math.ceil(v.max_speed/v.accel)+4;

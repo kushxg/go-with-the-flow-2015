@@ -2,7 +2,6 @@
 public class FairDriver extends DriverLogic	{
 	
 	public FairDriver(Vehicle v) {
-		anger=0;
 		type="fair";
 		v.speed = (int)(.4*v.max_speed);     //v.max_speed);
 		maxTimeToImpact = (int)Math.ceil(v.max_speed/v.accel)+2;

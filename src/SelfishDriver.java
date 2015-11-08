@@ -2,7 +2,6 @@
 public class SelfishDriver extends DriverLogic{
 
 	public SelfishDriver(Vehicle v) {
-		anger=0;
 		type="selfish";
 		v.speed = (int)(.6*v.max_speed);     //v.max_speed);
 		maxTimeToImpact = (int)Math.ceil(v.max_speed/v.accel)+3;

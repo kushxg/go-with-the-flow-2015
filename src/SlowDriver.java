@@ -2,7 +2,6 @@
 public class SlowDriver extends DriverLogic {
 	
 	public SlowDriver(Vehicle v) {
-		anger=0;
 		type="slow";
 		v.speed = (int)(.2*v.max_speed);     //v.max_speed);
 		maxTimeToImpact = (int)Math.ceil(v.max_speed/v.accel)+6;

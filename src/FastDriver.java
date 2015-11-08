@@ -2,7 +2,6 @@
 public class FastDriver extends DriverLogic {
 
 	public FastDriver(Vehicle v) {
-		anger=0;
 		type="fast";
 		v.speed = (int)(.6*v.max_speed);
 		maxTimeToImpact = (int)Math.ceil(v.max_speed/v.accel)+1;

@@ -1,7 +1,9 @@
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class Vehicle {
+	public double anger = 0;
 	public int max_speed;			// the maximum speed attainable by this kind of car (kph)
 	public int speed;				// the current speed of this car (kph)
 	public int length;				// the length of this car
@@ -13,6 +15,7 @@ public class Vehicle {
 	public DriverLogic logic;
 	public int timeOnRoad = 0;
 	
+	public List<Double> subset_congestions = new ArrayList<Double>();
 	
 	public Vehicle() {
 		

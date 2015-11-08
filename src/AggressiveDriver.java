@@ -4,7 +4,6 @@ public class AggressiveDriver extends DriverLogic{
 	
 	
 	public AggressiveDriver(Vehicle v) {
-		anger=0;
 		type="aggressive";
 		v.speed = (int)(.6*v.max_speed);
 		maxTimeToImpact = (int)Math.ceil(v.max_speed/v.accel)+1;

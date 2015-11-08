@@ -27,6 +27,7 @@ public class Road {
 	
 	// universal time for simulation
 	public int time = 0;
+	public List<Double> total_congestions = new ArrayList<Double>();
 	
 	// return information
 	public int total_runtime; 
@@ -85,11 +86,15 @@ public class Road {
 			int lane = (int)Math.random()*2+1;
 			createVehicle(type,driverType,pos,lane);
 		}
+		
+		num_cars = num_sedans + num_vans + num_trucks;
 	}
 	
 	// road constructor for given vehicle arraylist
 	public Road(){
 		initLanes();
+		
+		num_cars = num_sedans + num_vans + num_trucks;
 	}
 	
 	public boolean createVehicle(String type, String driver, int pos, int lane) {
@@ -209,18 +214,64 @@ public class Road {
 		}
 		avg_time_per_car = avg_time_per_car/vehicles.size();
 		System.out.println("Avg. Time/Car: "+ avg_time_per_car);
+		
+		// calculate everyone's change in anger
+		for(Vehicle v: vehicles){
+			double delta_a = 0;
+			for(int i=0;i<total_congestions.size();i++){
+				delta_a = (v.subset_congestions.get(i)-total_congestions.get(i));
+			}
+			v.anger = delta_a; // more congestion, higher anger
+			System.out.println(v.anger);
+		}
 	}
 	
 	// increments through each second
 	public String nextSecond(){
 		orderVehicles(); // sorts vehicles in descending order
+		
+		// congestion calculations
+		double avg_velocity = 0;
+		for(Vehicle w: vehicles){
+			avg_velocity += w.speed;
+		}
+		avg_velocity = ((double) avg_velocity)/num_cars;
+		double ct = congestion(avg_velocity, num_cars, 3000, 2);
+		
+		total_congestions.add(ct);
+		
 		for (Vehicle v: vehicles) {
+			// calculate Cs
+			int num_cars_range = 0;
+			double avg_velocity_range = 0;
+			
+			// loop range of 100 around car
+			for(int i=v.findIndex(this)-50;i<v.findIndex(this)+50;i++){
+				if(i >= 0 && i < 3000){
+					if(lane1.get(i) != null && !(lane1.get(i) instanceof RoadBlock)){
+						num_cars_range++;
+						avg_velocity_range += lane1.get(i).speed;
+					}
+					
+					if(lane2.get(i) != null && !(lane2.get(i) instanceof RoadBlock)){
+						num_cars_range++;
+						avg_velocity_range += lane2.get(i).speed;
+					}
+				}
+			}
+			
+			avg_velocity_range = ((double) avg_velocity_range)/num_cars_range;
+			
+			double cs = congestion(avg_velocity_range, num_cars_range, 100, 2);
+			v.subset_congestions.add(cs);
+			
 			if (v.drive(this)) {	// if a crash took place, then break out of the simulation
 				crashed = true;
 				return "crash";
 			}
 		}
 		if (allCarsExited()) {
+			// set anger values
 			return "done";
 		}
 		return "running";		// implies simulation is still running in this second
@@ -240,6 +291,10 @@ public class Road {
 			lane2.add(null);
 		}
 		
+	}
+	
+	public double congestion(double vel, int cars, int len, int lanes) {
+		return vel*vel*cars/len/lanes/2;
 	}
 
 	private class CustomComparator implements Comparator<Vehicle> {

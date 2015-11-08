@@ -4,13 +4,15 @@ import java.util.List;
 
 public class DriverLogic {
 	
-	public int anger = 0;
+	
 	public String type;
 
 	public int mergeStatus = 0;
 	int maxTimeToImpact;
 	int slowTime;
 	int speedTime;
+	
+	
 	
 	public List<String> actions = new ArrayList<String>();
 	
@@ -115,7 +117,6 @@ public class DriverLogic {
 			
 			mergeStatus++;
 		}else{
-			System.out.println(mergeStatus);
 			mergeStatus++;
 			if(mergeStatus == 4){
 				road.moveVehicle(v, pos, 1);
@@ -139,15 +140,10 @@ public class DriverLogic {
 			
 			mergeStatus++;
 		}else{
-			System.out.println(mergeStatus);
 			mergeStatus++;
 			if(mergeStatus == 4){
 				road.moveVehicle(v, pos, 2);
 			}
 		}
-	}
-	
-	public double congestion(double vel, int cars, int len, int lanes) {
-		return vel*vel*cars/len/lanes/2;
 	}
 }
