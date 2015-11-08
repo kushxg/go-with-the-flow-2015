@@ -4,7 +4,7 @@ import java.util.List;
 
 public class DriverLogic {
 	
-	public int anger;
+	public int anger = 0;
 	public String type;
 
 	public int mergeStatus = 0;
