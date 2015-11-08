@@ -122,4 +122,20 @@ public class DriverLogic {
 			}
 		}
 	}
+	
+	public void mergeRight(Road road, Vehicle v){
+		if(v.findLane(road) == 2){
+			return;
+		}
+		
+		int pos = v.findIndex(road);
+		
+		if(mergeStatus == 0){
+			for(int i=pos;i>pos-v.length;i--){
+				if(i >= 0 && i < road.roadblock_position - 100 && road.lane2.get(i) == null){
+					return;
+				}
+			}
+		}
+	}
 }

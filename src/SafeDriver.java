@@ -5,7 +5,7 @@ public class SafeDriver extends DriverLogic {
 		anger=0;
 		type="Safe";
 		v.speed = (int)(.4*v.max_speed);     //v.max_speed);
-		maxTimeToImpact = (int)Math.ceil(v.max_speed/v.accel)+2;
+		maxTimeToImpact = (int)Math.ceil(v.max_speed/v.accel)+4;
 		slowTime = 4;
 		speedTime = 10;
 		

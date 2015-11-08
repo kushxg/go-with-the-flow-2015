@@ -16,5 +16,6 @@ public class TestDriver extends DriverLogic {
 		move(delta, road, v);
 			
 		mergeLeft(road, v);
+		mergeRight(road, v);
 	}
 }
