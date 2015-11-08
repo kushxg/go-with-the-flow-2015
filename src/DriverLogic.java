@@ -136,6 +136,14 @@ public class DriverLogic {
 					return;
 				}
 			}
+			
+			mergeStatus++;
+		}else{
+			System.out.println(mergeStatus);
+			mergeStatus++;
+			if(mergeStatus == 4){
+				road.moveVehicle(v, pos, 2);
+			}
 		}
 	}
 }

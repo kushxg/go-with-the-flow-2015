@@ -45,10 +45,4 @@ public class ConservativeDriver extends DriverLogic{
 			}
 		}
 	}
-	
-	public void mergeRight(Road road, Vehicle v){
-		if(v.findLane(road) == 2){
-			return;
-		}
-	}
 }
