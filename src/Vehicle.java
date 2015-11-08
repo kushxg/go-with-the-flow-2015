@@ -28,6 +28,7 @@ public class Vehicle {
 		}
 		
 		if(crashed){
+			System.out.println("crashed");
 			return true;
 		}
 		logic.drive(road, this);

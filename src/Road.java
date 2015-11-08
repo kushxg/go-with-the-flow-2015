@@ -211,22 +211,26 @@ public class Road {
 		
 		avg_time_per_car = 0;
 		for (Vehicle v: vehicles) {
+			System.out.println(v.timeOnRoad);
 			avg_time_per_car += v.timeOnRoad;
 		}
-		avg_time_per_car = avg_time_per_car/vehicles.size();
+		avg_time_per_car = avg_time_per_car/(vehicles.size());
 		System.out.println("Avg. Time/Car: "+ avg_time_per_car);
 		
 		System.out.println("ct size: " + total_congestions.size());
 		
 		// calculate everyone's change in anger
 		for(Vehicle v: vehicles){
-			double delta_a = 0;
-			for(int i=0;i<total_congestions.size();i++){
-				delta_a += (v.subset_congestions.get(i)-total_congestions.get(i));
+			if(!(v instanceof RoadBlock)){
+				System.out.println(v.subset_congestions.size());
+				double delta_a = 0;
+				for(int i=0;i<total_congestions.size();i++){
+					delta_a += (v.subset_congestions.get(i)-total_congestions.get(i));
+				}
+				v.anger = delta_a; // more congestion, higher anger
+				
+				// System.out.println(v.anger);
 			}
-			v.anger = delta_a; // more congestion, higher anger
-			
-			System.out.println(v.anger);
 		}
 	}
 	
@@ -239,7 +243,7 @@ public class Road {
 		for(Vehicle w: vehicles){
 			avg_velocity += w.speed;
 		}
-		avg_velocity = ((double) avg_velocity)/vehicles.size();
+		avg_velocity = ((double) avg_velocity)/(vehicles.size());
 		double ct = congestion(avg_velocity, vehicles.size(), 3000, 2);
 		
 		total_congestions.add(ct);
@@ -252,12 +256,12 @@ public class Road {
 			// loop range of 100 around car
 			for(int i=v.findIndex(this)-50;i<v.findIndex(this)+50;i++){
 				if(i >= 0 && i < 3000){
-					if(lane1.get(i) != null && !(lane1.get(i) instanceof RoadBlock)){
+					if(lane1.get(i) != null){
 						num_cars_range++;
 						avg_velocity_range += lane1.get(i).speed;
 					}
 					
-					if(lane2.get(i) != null && !(lane2.get(i) instanceof RoadBlock)){
+					if(lane2.get(i) != null){
 						num_cars_range++;
 						avg_velocity_range += lane2.get(i).speed;
 					}

@@ -23,6 +23,10 @@ public class DriverLogic {
 
 	}
 	
+	public String toString(){
+		return "driver logic";
+	}
+	
 	public int findIndex(Road road, Vehicle v) {
 		
 		if (road.lane1.indexOf(v) != -1) {

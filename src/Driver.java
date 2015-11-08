@@ -15,9 +15,9 @@ public class Driver {
 	private static int num_tests = 2;
 	
 	public static int num_cars = 0;
-	private static int num_sedans = 2;
-	private static int num_vans = 2;
-	private static int num_trucks = 4;
+	private static int num_sedans = 10;
+	private static int num_vans = 0;
+	private static int num_trucks = 0;
 	
 	// dont change these values
 	private static int num_random_drivers = 0;
@@ -30,6 +30,7 @@ public class Driver {
 	private static int num_fair_drivers = 0;
 	private static int num_test_drivers = 0;
 
+	private static String crash_result = "";
 	
 	public static void main(String[] args) throws IOException {
 		// each set of tests gets printed out in file
@@ -284,6 +285,9 @@ public class Driver {
 			
 			r.createVehicle("roadblock", "", r.roadblock_position, 2);
 			
+			// create test vehicle
+			r.createVehicle("sedan", "test", 0, 2);
+			
 			r.orderVehicles();
 			
 			r.run();
@@ -301,8 +305,9 @@ public class Driver {
 			if(!r.crashed){
 				avg_time_per_car = r.avg_time_per_car;
 				avg_avg_time_per_car += avg_time_per_car;
+			}else{
 				num_crashes++;
-			} 
+			}
 			
 			file.println(total_runtime + "," + avg_time_per_car + "," + crash_result + "," + avg_anger);
 		}
