@@ -66,20 +66,23 @@ public class TestDriver extends DriverLogic {
 		} else if (minValue == congDiff1) {
 			actions.add("accel");
 			v.speed+=v.accel;
+			if (v.speed > 1.2*road.speed_limit) {
+				v.speed-=v.accel;
+			}
 		} else if (minValue == congDiff2) {
 			if (v.findLane(road) == 1) {
 				actions.add("attempt move right");
-				attemptMergeRight();
+				mergeRight(road,v);
 			} else {
-				attemptMergeLeft();
+				mergeLeft(road,v);
 			}
 		} else if (minValue == congDiff3) {
 			actions.add("move back and merge");
 			v.speed+=v.brakeAccel;
 			if (v.findLane(road) == 1) {
-				attemptMergeRight();
+				mergeRight(road,v);
 			} else {
-				attemptMergeLeft();
+				mergeLeft(road,v);
 			}
 		} else if (minValue == congDiff4) {
 			actions.add("brake");
@@ -90,13 +93,7 @@ public class TestDriver extends DriverLogic {
 		move(delta, road, v);
 	}
 	
-	public void attemptMergeRight() {
-		
-	}
-	
-	public void attemptMergeLeft() {
-		
-	}
+
 	
 	public double congestion(double vel, int cars, int len, int lanes) {
 		return vel*vel*cars/len/lanes/2;
