@@ -86,15 +86,11 @@ public class Road {
 			int lane = (int)Math.random()*2+1;
 			createVehicle(type,driverType,pos,lane);
 		}
-		
-		num_cars = num_sedans + num_vans + num_trucks;
 	}
 	
 	// road constructor for given vehicle arraylist
 	public Road(){
 		initLanes();
-		
-		num_cars = num_sedans + num_vans + num_trucks;
 	}
 	
 	public boolean createVehicle(String type, String driver, int pos, int lane) {
@@ -215,13 +211,16 @@ public class Road {
 		avg_time_per_car = avg_time_per_car/vehicles.size();
 		System.out.println("Avg. Time/Car: "+ avg_time_per_car);
 		
+		System.out.println("ct size: " + total_congestions.size());
+		
 		// calculate everyone's change in anger
 		for(Vehicle v: vehicles){
 			double delta_a = 0;
 			for(int i=0;i<total_congestions.size();i++){
-				delta_a = (v.subset_congestions.get(i)-total_congestions.get(i));
+				delta_a += (v.subset_congestions.get(i)-total_congestions.get(i));
 			}
 			v.anger = delta_a; // more congestion, higher anger
+			
 			System.out.println(v.anger);
 		}
 	}
@@ -235,8 +234,8 @@ public class Road {
 		for(Vehicle w: vehicles){
 			avg_velocity += w.speed;
 		}
-		avg_velocity = ((double) avg_velocity)/num_cars;
-		double ct = congestion(avg_velocity, num_cars, 3000, 2);
+		avg_velocity = ((double) avg_velocity)/vehicles.size();
+		double ct = congestion(avg_velocity, vehicles.size(), 3000, 2);
 		
 		total_congestions.add(ct);
 		
@@ -260,7 +259,11 @@ public class Road {
 				}
 			}
 			
-			avg_velocity_range = ((double) avg_velocity_range)/num_cars_range;
+			if(num_cars_range != 0){
+				avg_velocity_range = ((double) avg_velocity_range)/num_cars_range;
+			}else{
+				avg_velocity_range = 0;
+			}
 			
 			double cs = congestion(avg_velocity_range, num_cars_range, 100, 2);
 			v.subset_congestions.add(cs);

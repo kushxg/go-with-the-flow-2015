@@ -14,7 +14,12 @@ public class Driver {
 	
 	private static int num_tests = 2;
 	
+<<<<<<< HEAD
 	private static int num_sedans = 9;
+=======
+	public static int num_cars = 0;
+	private static int num_sedans = 2;
+>>>>>>> origin/master
 	private static int num_vans = 2;
 	private static int num_trucks = 4;
 	
@@ -70,7 +75,7 @@ public class Driver {
 		
 		/* SET UP TESTS */
 		
-		int num_cars = num_sedans + num_vans + num_trucks;
+		num_cars = num_sedans + num_vans + num_trucks;
 		int total_runtime = 0;
 		double avg_time_per_car = 0;
 		
