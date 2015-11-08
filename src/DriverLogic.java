@@ -146,4 +146,8 @@ public class DriverLogic {
 			}
 		}
 	}
+	
+	public double congestion(double vel, int cars, int len, int lanes) {
+		return vel*vel*cars/len/lanes/2;
+	}
 }
