@@ -12,11 +12,13 @@ public class Driver {
 	private static FileWriter masterFile; // for overall analysis of data
 	private static BufferedReader reader;
 	
+	private static int num_tests = 2;
 	
-	private static int num_sedans = 5;
+	private static int num_sedans = 10;
 	private static int num_vans = 0;
 	private static int num_trucks = 0;
 	
+	// dont change these values
 	private static int num_random_drivers = 0;
 	private static int num_aggressive_drivers = 0;
 	private static int num_conservative_drivers = 0;
@@ -75,11 +77,6 @@ public class Driver {
 		// beginning of test
 		file.println("TOTAL RUNTIME,AVG TIME PER CAR,CRASHED");
 		
-		int num_tests = 10; // number of tests
-		
-		
-		
-		
 		num_cars = num_sedans + num_vans + num_trucks;
 		
 		double avg_runtime = 0;
@@ -96,7 +93,7 @@ public class Driver {
 				pos = (int)(Math.random()*1500)+15;
 				lane = (int)(Math.random()*2)+1;
 				System.out.println(pos + " " + lane);
-				int driverType = 1;//(int)Math.random()*2;
+				int driverType = 3;//(int)Math.random()*2;
 				switch(driverType) {
 				case 1:
 					if (!r.createVehicle("sedan", "aggressive", pos, lane)) {
@@ -104,6 +101,20 @@ public class Driver {
 					}
 					num_aggressive_drivers++;
 					System.out.println("created aggressive");
+					break;
+				case 2:
+					if (!r.createVehicle("sedan", "conservative", pos, lane)) {
+						j--;
+					}
+					num_conservative_drivers++;
+					System.out.println("created conservative");
+					break;
+				case 3:
+					if (!r.createVehicle("sedan", "fair", pos, lane)) {
+						j--;
+					}
+					num_fair_drivers++;
+					System.out.println("created fair");
 					break;
 				default:
 					if (!r.createVehicle("sedan", "random", pos, lane)) {
@@ -126,6 +137,20 @@ public class Driver {
 					}
 					num_aggressive_drivers++;
 					break;
+				case 2:
+					if (!r.createVehicle("van", "conservative", pos, lane)) {
+						j--;
+					}
+					num_conservative_drivers++;
+					System.out.println("created conservative");
+					break;
+				case 3:
+					if (!r.createVehicle("van", "fair", pos, lane)) {
+						j--;
+					}
+					num_fair_drivers++;
+					System.out.println("created fair");
+					break;
 				default:
 					if (!r.createVehicle("vans", "random", pos, lane)) {
 						j--;
@@ -146,6 +171,20 @@ public class Driver {
 						j--;
 					}
 					num_aggressive_drivers++;
+					break;
+				case 2:
+					if (!r.createVehicle("truck", "conservative", pos, lane)) {
+						j--;
+					}
+					num_conservative_drivers++;
+					System.out.println("created conservative");
+					break;
+				case 3:
+					if (!r.createVehicle("truck", "fair", pos, lane)) {
+						j--;
+					}
+					num_fair_drivers++;
+					System.out.println("created fair");
 					break;
 				default:
 					if (!r.createVehicle("trucks", "random", pos, lane)) {

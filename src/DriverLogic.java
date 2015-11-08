@@ -6,9 +6,7 @@ public class DriverLogic {
 	
 	public int anger;
 	public String type;
-	
-	public boolean isAccel = false;
-	public boolean isBraking = false;
+
 	public int mergeStatus = 0;
 	int maxTimeToImpact;
 	int slowTime;
