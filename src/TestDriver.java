@@ -8,8 +8,13 @@ public class TestDriver extends DriverLogic {
 		
 	}
 	
-	public boolean drive(Road road, Vehicle v) {
+	public void drive(Road road, Vehicle v) {
 		
-		return false;	// false implies that a crash did not take place
+		accel(road,v);
+		
+		int delta = (int)Math.ceil(mps(v.speed))+1;
+		move(delta, road, v);
+			
+		mergeLeft(road, v);
 	}
 }

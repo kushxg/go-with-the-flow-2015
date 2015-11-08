@@ -16,6 +16,7 @@ public class FairDriver extends DriverLogic	{
 		
 		int delta = (int)Math.ceil(mps(v.speed))+1;
 		move(delta, road, v);
-
+		
+		mergeLeft(road, v);
 	}
 }
