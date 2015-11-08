@@ -116,6 +116,34 @@ public class Driver {
 					num_fair_drivers++;
 					System.out.println("created fair");
 					break;
+				case 4:
+					if (!r.createVehicle("sedan", "fast", pos, lane)) {
+						j--;
+					}
+					num_fast_drivers++;
+					System.out.println("created fast");
+					break;
+				case 5:
+					if (!r.createVehicle("sedan", "safe", pos, lane)) {
+						j--;
+					}
+					num_safe_drivers++;
+					System.out.println("created safe");
+					break;
+				case 6:
+					if (!r.createVehicle("sedan", "selfish", pos, lane)) {
+						j--;
+					}
+					num_selfish_drivers++;
+					System.out.println("created selfish");
+					break;
+				case 7:
+					if (!r.createVehicle("sedan", "slow", pos, lane)) {
+						j--;
+					}
+					num_slow_drivers++;
+					System.out.println("created slow");
+					break;
 				default:
 					if (!r.createVehicle("sedan", "random", pos, lane)) {
 						j--;
@@ -151,6 +179,34 @@ public class Driver {
 					num_fair_drivers++;
 					System.out.println("created fair");
 					break;
+				case 4:
+					if (!r.createVehicle("van", "fast", pos, lane)) {
+						j--;
+					}
+					num_fast_drivers++;
+					System.out.println("created fast");
+					break;
+				case 5:
+					if (!r.createVehicle("van", "safe", pos, lane)) {
+						j--;
+					}
+					num_safe_drivers++;
+					System.out.println("created safe");
+					break;
+				case 6:
+					if (!r.createVehicle("van", "selfish", pos, lane)) {
+						j--;
+					}
+					num_selfish_drivers++;
+					System.out.println("created selfish");
+					break;
+				case 7:
+					if (!r.createVehicle("van", "slow", pos, lane)) {
+						j--;
+					}
+					num_slow_drivers++;
+					System.out.println("created slow");
+					break;
 				default:
 					if (!r.createVehicle("vans", "random", pos, lane)) {
 						j--;
@@ -185,6 +241,34 @@ public class Driver {
 					}
 					num_fair_drivers++;
 					System.out.println("created fair");
+					break;
+				case 4:
+					if (!r.createVehicle("truck", "fast", pos, lane)) {
+						j--;
+					}
+					num_fast_drivers++;
+					System.out.println("created fast");
+					break;
+				case 5:
+					if (!r.createVehicle("truck", "safe", pos, lane)) {
+						j--;
+					}
+					num_safe_drivers++;
+					System.out.println("created safe");
+					break;
+				case 6:
+					if (!r.createVehicle("truck", "selfish", pos, lane)) {
+						j--;
+					}
+					num_selfish_drivers++;
+					System.out.println("created selfish");
+					break;
+				case 7:
+					if (!r.createVehicle("truck", "slow", pos, lane)) {
+						j--;
+					}
+					num_slow_drivers++;
+					System.out.println("created slow");
 					break;
 				default:
 					if (!r.createVehicle("trucks", "random", pos, lane)) {
