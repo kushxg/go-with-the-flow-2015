@@ -14,12 +14,8 @@ public class Driver {
 	
 	private static int num_tests = 2;
 	
-<<<<<<< HEAD
-	private static int num_sedans = 9;
-=======
 	public static int num_cars = 0;
 	private static int num_sedans = 2;
->>>>>>> origin/master
 	private static int num_vans = 2;
 	private static int num_trucks = 4;
 	
@@ -301,7 +297,7 @@ public class Driver {
 			total_runtime = r.total_runtime;
 			avg_runtime += total_runtime;
 			
-			String crash_result = (r.crashed) ? "X" : ""; // TYPE OF DRIVER THAT CRASHES
+			String crash_result = (r.crashed) ? r.crash_vehicle.logic.toString() : ""; // TYPE OF DRIVER THAT CRASHES
 			if(!r.crashed){
 				avg_time_per_car = r.avg_time_per_car;
 				avg_avg_time_per_car += avg_time_per_car;
@@ -309,7 +305,6 @@ public class Driver {
 			} 
 			
 			file.println(total_runtime + "," + avg_time_per_car + "," + crash_result + "," + avg_anger);
-
 		}
 		
 		avg_runtime = ((double) avg_runtime)/num_tests;

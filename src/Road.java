@@ -13,6 +13,8 @@ public class Road {
 	public int num_lanes = 2; // number of lanes
 	public int roadblock_position = 2500; // position of road-block from beginning of road
 	
+	public Vehicle crash_vehicle; // vehicle that caused crash
+	
 	// add up to num_cars
 	public int num_sedans = 0;
 	public int num_vans = 0;
@@ -185,6 +187,7 @@ public class Road {
 	public boolean moveVehicle(Vehicle v, int pos, int lane) {
 		removeVehicle(v);
 		if (!placeVehicle(v,pos,lane)) {
+			crash_vehicle = v;
 			v.crashed = true;
 			return false;	// crash occurred
 		}
